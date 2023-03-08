@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <title>Nivelamento Web</title>
+        <style type="text/css">
+            table {
+                width: 800px;
+                border: 1px solid #000;
+                border-collapse: collapse;
+                margin: 0 auto;
+            }
+            thead tr {
+                background-color: beige;
+            }
+            tbody tr:nth-of-type(odd) {
+                background-color: darkkhaki;
+            }
+            tbody tr:nth-of-type(even) {
+                background-color: darkolivegreen;
+            }
+            tbody tr:hover {
+                background-color: beige;
+                cursor: pointer;
+            }
+            td, th {
+                border: 1px solid #000;
+                padding: 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            fetch('https://jsonplaceholder.typicode.com/users')
+                .then(r => r.json())
+                .then(r => escrever(r));
+            
+            function escrever(usuarios) {
+                let tabela = '<table>';
+                tabela += `<thead>
+                            <tr>
+                                <th rowspan="2">#</th>
+                                <th rowspan="2">Nome</th>
+                                <th rowspan="2">E-mail</th>
+                                <th colspan="2">Endereço</th>
+                            </tr>
+                            <tr>
+                                <th>Rua</th>
+                                <th>Cidade</th>
+                            </tr>
+                            </thead>`;
+                tabela += '<tbody>';
+                usuarios.forEach(usuario => {
+                    tabela += '<tr><td>' + usuario.id + '</td>'; 
+                    tabela += '<td>' + usuario.name + '</td>';
+                    tabela += '<td>' + usuario.email + '</td>';
+                    tabela += '<td>' + usuario.address.street + '</td>';
+                    tabela += '<td>' + usuario.address.city + '</td></tr>';
+                });
+                tabela += '</tbody></table>';
+                //document.write(tabela);
+                document.getElementsByTagName('body')[0].innerHTML += tabela;
+            }
+        </script>
+    </body>
+</html>

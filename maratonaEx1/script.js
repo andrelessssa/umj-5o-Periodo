@@ -4,5 +4,6 @@ function removeVogaisString( remove ){
  }
  
  var resultado = removeVogaisString( "OláÁéôãõ, mundo!" );
- 
+
+ document.getElementsByTagName('body')[0].innerHTML += resultado;
  console.log( resultado );
