@@ -1,7 +1,15 @@
-alert('Teste')
 
 
+var nome = new Array (prompt("Digite uma expressao matemática Para verificar: "));
+
+for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    
+}
 
 
- document.getElementsByTagName('body')[0].innerHTML += resultado;
- console.log( resultado );
+var resultado = prompt("Qual o resultado encontrado? ") 
+document.write("O resultado é ", );
+
+
+   
