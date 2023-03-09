@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Aula1",
+            "request": "launch",
+            "mainClass": "Aula1",
+            "projectName": "umj-5o-Periodo_70dcbe90"
+        },
+        {
+            "type": "java",
+            "name": "Aula2",
+            "request": "launch",
+            "mainClass": "Aula2",
+            "projectName": "umj-5o-Periodo_70dcbe90"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Iniciar o Chrome em relação a localhost",
